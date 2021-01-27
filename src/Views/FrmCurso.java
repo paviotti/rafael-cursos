@@ -7,6 +7,7 @@ package Views;
 
 import beans.Curso;
 import dao.CursoDAO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -168,7 +169,16 @@ public class FrmCurso extends javax.swing.JFrame {
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         int idPesquisa = Integer.parseInt(txtIdPesquisa.getText());
         CursoDAO cursoDAO = new CursoDAO(); //para poder usra o metodo getCurso criado para pesquisa
-        Curso curso = cursoDAO.getCurso(WIDTH);//retorna uma variavel do tipo curso
+        Curso curso = cursoDAO.getCurso(idPesquisa);//retorna uma variavel do tipo curso
+        if(curso == null){ //se o valor digita não exitir
+            JOptionPane.showMessageDialog(this, "Curso não encontrado"); //
+        }else{
+            txtCurso.setText(curso.getNomecurso());
+            cmbNivel.setSelectedItem(curso.getNivel());
+            jsDuracao.setValue(curso.getDuracao());
+                    
+        }
+        
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
 

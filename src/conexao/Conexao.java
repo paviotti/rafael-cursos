@@ -11,7 +11,7 @@ public class Conexao {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/projetojava?serverTimezone=UTC", //linha de conexão + timezone
+                "jdbc:mysql://localhost:3306/projetojava?serverTimezone=UTC&useSSL=false", //linha de conexão + timezone
                 "root", //usuario do mysql
                 "567809" //senha do mysql
             );    

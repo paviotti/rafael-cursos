@@ -2,19 +2,19 @@
 package beans; //beans é classe estatica
 
 public class Curso {
-    private String id;
+    private int id;
     private String nomecurso;
     private String nivel;
     private int duracao;
-      
-    public String getId() {
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
-
+      
     public String getNomecurso() {
         return nomecurso;
     }
